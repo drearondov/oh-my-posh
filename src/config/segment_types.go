@@ -185,6 +185,8 @@ const (
 	SYSTEMINFO SegmentType = "sysinfo"
 	// TALOSCTL writes the talosctl context
 	TALOSCTL SegmentType = "talosctl"
+	// TALOSCTL writes the talosctl context
+	TASKWARRIOR SegmentType = "taskwarrior"
 	// TERRAFORM writes the terraform workspace we're currently in
 	TERRAFORM SegmentType = "terraform"
 	// TEXT writes a text
@@ -297,6 +299,7 @@ var Segments = map[SegmentType]func() SegmentWriter{
 	SWIFT:           func() SegmentWriter { return &segments.Swift{} },
 	SYSTEMINFO:      func() SegmentWriter { return &segments.SystemInfo{} },
 	TALOSCTL:        func() SegmentWriter { return &segments.TalosCTL{} },
+	TASKWARRIOR:     func() SegmentWriter { return &segments.Taskwarrior{} },
 	TERRAFORM:       func() SegmentWriter { return &segments.Terraform{} },
 	TEXT:            func() SegmentWriter { return &segments.Text{} },
 	TIME:            func() SegmentWriter { return &segments.Time{} },
